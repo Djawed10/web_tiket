@@ -1,0 +1,572 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Djawed web </title>
+    </head>
+
+    <body>
+                    <div id="my_map">
+                      <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="600px"  style="border: 50;" allowfullscreen></iframe>
+                    </div>
+  </body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps with Marker</title>
+</head>
+<body class="o_wprofile_body">
+    <div id="wrapwrap" class="o_portal o_wanim_overflow_x_hidden">
+<header>
+            <div class="search_bar_filter close_button">
+<nav data-name="Navbar" class="navbar navbar-expand-lg navbar-light o_colored_level o_cc ">
+                    <div class="J_header_logo_desktop">
+                        <a href="/" class="nav-link">
+                            <img src="/jouz/static/logos/logo-jouz-256.png" aria-label="Logo of jouz" title="Jouz" height="48px" width="48px" role="img" loading="lazy" style="">
+                        </a>
+                    </div>
+                    <div id="top_menu_container " class="container justify-content-start justify-content-lg-between">
+                        <div id="searchBarId" class="search__bar d-none d-lg-block w-100">
+                            <div class="justify-content-end d-flex">
+                                <input class="form-control mr-sm-2 j_header_search_bar" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Content" data-popover-content="#a1" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                        </div>
+                        <div class=" col-12 p-5 hidden d-none" id="a1">
+                            <div class=" col-12  popover-body">
+                                <form id="event_search_form" action="/event" method="GET">
+                                    <div class="row">
+                                        <div class="submit-container col-12 bg-white d-flex justify-content-center justify-content-md-end p-2 mt-md-3">
+                                            <i id="closeButtonId" class="close fa fa-2x fa-times-circle close_btn" data-dismiss="alert"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 pl-4 align-items-center">
+                                        <div class="col-lg-2">
+                                            <p style="font-size : 20px !important ; font-weight:700 !important">
+                                                Quand ?
+                                            </p>
+                                        </div>
+                                        <div class=" col-lg-10 ">
+                                            <ul class="filter-choices list-unstyled list-choises no-dropdown js-list-choises-toggle ps-0 pe-3                             d-flex flex-row flex-wrap align-items-stretch m-0">
+                                                <li class="px-1 mb-2">
+                                                        <input type="checkbox" id="search_date" name="search_date" value="1">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="search_date">
+                                                                Dernière minute
+                                                            </label>
+                                                        <input type="checkbox" id="search_date" name="search_date" value="2">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="search_date">
+                                                                Demain
+                                                            </label>
+                                                        <input type="checkbox" id="search_date" name="search_date" value="3">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="search_date">
+                                                                Cette semaine
+                                                            </label>
+                                                        <input type="checkbox" id="search_date" name="search_date" value="4">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="search_date">
+                                                                Ce weekend
+                                                            </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 pl-4 align-items-center">
+                                        <div class="col-lg-2">
+                                            <p style="font-size : 20px !important ; font-weight:700 !important">
+                                                Ou ?
+                                            </p>
+                                        </div>
+                                        <div class=" col-lg-10 ">
+                                            <select class="form-select dropdown_buton" id="venue" name="search_venue">
+                                                <option value="" selected="1"> Sélectionnez un
+                                                </option>
+                                                    <option value="1">
+                                                        Kouba
+                                                    </option>
+                                                    <option value="2">
+                                                        Alger
+                                                    </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 pl-4 align-items-center">
+                                        <div class="col-lg-2">
+                                            <p style="font-size : 20px !important ; font-weight:700 !important">
+                                                Envie de ?
+                                            </p>
+                                        </div>
+                                        <div class=" col-lg-10 ">
+                                            <ul class="filter-choices list-unstyled list-choises--no-dropdown js-list-choises-toggle ps-0 pe-3 d-flex flex-row flex-wrap align-items-stretch m-0">
+                                                    <li class="px-1 mb-2">
+                                                        <input type="checkbox" id="category_search" name="category_search" value="2">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="category_search">
+                                                                Conférence
+                                                            </label>
+                                                    </li>
+                                                    <li class="px-1 mb-2">
+                                                        <input type="checkbox" id="category_search" name="category_search" value="3">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="category_search">
+                                                                Spectacles
+                                                            </label>
+                                                    </li>
+                                                    <li class="px-1 mb-2">
+                                                        <input type="checkbox" id="category_search" name="category_search" value="4">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="category_search">
+                                                                Théâtre
+                                                            </label>
+                                                    </li>
+                                                    <li class="px-1 mb-2">
+                                                        <input type="checkbox" id="category_search" name="category_search" value="5">
+                                                            <label class="border border-class border-black text-center fw-bold cursor-pointer tt-fs-3 tt-fs-md-5" for="category_search">
+                                                                Humour
+                                                            </label>
+                                                    </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="submit-container col-12 bg-white d-flex justify-content-center justify-content-md-end p-2 mt-md-3">
+                                            <input type="submit" value="Valider" class="d-block border-0 bg-primary fw-semibold rounded-3 text-white tt-fs-6 tt-fs-md-7 px-3 py-2" style="border-radius: 0.25rem;">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="csrf_token" value="6da3f347d133dadfea6c5b3d31eb9f7790fbc3dbo1734629638">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center ">
+                            <nav class="navbar navbar-expand-lg navbar-light ">
+                                <div class="container ">
+    <div class="row-12 d-flex">
+        <div class="col-3">
+            <button type="button" data-toggle="collapse" data-target="#navbarNav" class="navbar-toggler ">
+                <span class="navbar-toggler-icon o_not_editable"></span>
+            </button>
+        </div>
+        <div class="J_header_logo_mobile col-9">
+            <a href="/" class="nav-link">
+                <img src="/jouz_theme/static/src/images/logo_jouz_horizontal_transparent.png" height="32px" width="150px" aria-label="Logo of jouz" title="Jouz" role="img" loading="lazy" style="">
+            </a>
+        </div>
+    </div>
+                                    <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item">
+</li><li class="nav-item text-light">
+    <a role="menuitem" href="/" class="nav-link text-light ">
+        <span>Accueil</span>
+    </a>
+</li>
+<li class="nav-item text-light">
+    <a role="menuitem" href="/event" class="nav-link text-light ">
+        <span>Évènements</span>
+    </a>
+</li>
+<li class="nav-item text-light">
+    <a role="menuitem" href="/contactus" class="nav-link text-light ">
+        <span>Contactez-nous</span>
+    </a>
+</li>
+                                                <div id="hamburgerSearch" class="">
+                                                    <form class="form-inline my-2 my-lg-0" action="/event" method="GET">
+                                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="hamburgerSearch">
+                                                    </form>
+                                                </div>
+                                            
+                                            <li class="nav-item dropdown ville_mobile">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCity" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#962D3E; background:white; border-radius: 0.25rem;">
+                                                    Ville
+                                                </a>
+                                                <div class="dropdown-menu                                                     dropdown-menu-right" aria-labelledby="navbarDropdownCity">
+                                                    <div class="ml-4">
+                                                        <a href="/event" class="text-dark">ville</a>
+                                                    </div>
+                                                        <a class="dropdown-item" href="/event?venue_id=1">
+                                                            Kouba
+                                                        </a>
+                                                        <a class="dropdown-item" href="/event?venue_id=2">
+                                                            Alger
+                                                        </a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+    <a href="#" role="button" data-toggle="dropdown" class="pl-2">
+            <img width="40" height="40" alt="" loading="eager" src="data:image/png;base64,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" class="rounded-circle o_object_fit_cover ">
+        <div class="col-12 pl-0 pr-0">
+        </div>
+    </a>
+    <div role="menu" class="dropdown-menu dropdown-menu-right js_usermenu ">
+        <a href="/my/home" role="menuitem" class="dropdown-item"> Mon compte </a>
+        <div id="o_logout_divider" class="dropdown-divider"></div>
+        <a role="menuitem" id="o_logout" class="dropdown-item" href="/web/session/logout?redirect=/"> Se déconnecter </a>
+    </div>
+                                            </li>
+    <li class="nav-item divider d-none"></li> 
+    <li class="o_wsale_my_cart align-self-md-start  nav-item">
+        <a href="/shop/cart" class="nav-link">
+            <i class="fa fa-2x fa-shopping-cart fa-shopping-cart-header"></i>
+            <sup class="my_cart_quantity badge badge-primary" data-order-id="">0</sup>
+        </a>
+    </li>
+                                                <li class="nav-item pl-2 pt-1">
+                                                    <a href="/my/client/favorites">
+                                                        <i class="fa-2x fa fa-heart text-white"></i>
+                                                    </a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+</nav>
+                <div style="background:#962D3E;color:white">
+                    <ul class="list-unstyled d-none d-lg-flex flex-row align-items-center justify-content-around pr-5 pl-5 m-0 fs-5 ml-4">
+                            <li class=" hover-menu nav-desktop-item dropdown pb-3 mr-5 cursor-pointer position-static show nav-item text-light">
+                                <a href="/" class=" text-white text-decoration-none fw-semibold enable-click nav-link text-light dropdown-toggle o_mega_menu_toggle mon_bouton" data-toggle="dropdown" aria-expanded="true">
+                                    Conférence
+                                </a>
+                                <div class="dropdown-menu">
+    <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </section>
+                                </div>
+                            </li>
+                            <li class=" hover-menu nav-desktop-item dropdown pb-3 mr-5 cursor-pointer position-static show nav-item text-light">
+                                <a href="/" class=" text-white text-decoration-none fw-semibold enable-click nav-link text-light dropdown-toggle o_mega_menu_toggle mon_bouton" data-toggle="dropdown" aria-expanded="true">
+                                    Spectacles
+                                </a>
+                                <div class="dropdown-menu">
+    <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-6 col-lg pt16 pb24">
+                        <h4 class="o_default_snippet_text text-uppercase h5 font-weight-bold mt-0">
+                            Spectacle - Cinéma
+                        </h4>
+                        <div class="s_hr text-left pt4 pb16 text-o-color-1">
+                            <hr class="w-100 mx-auto" style="border-top-width: 2px; border-top-style: solid;">
+                        </div>
+                        <nav class="nav flex-column">
+                                <a class="nav-link o_default_snippet_text px-0" data-name="Menu Item" href="/event/4/register">
+                                    Film
+                                </a>
+                                <a class="nav-link o_default_snippet_text px-0" data-name="Menu Item" href="/event/7/register">
+                                    Théâtre
+                                </a>
+                                <a class="nav-link o_default_snippet_text px-0" data-name="Menu Item" href="/event/10/register">
+                                    event_test
+                                </a>
+                        </nav>
+                    </div>
+            </div>
+        </div>
+    </section>
+                                </div>
+                            </li>
+                            <li class=" hover-menu nav-desktop-item dropdown pb-3 mr-5 cursor-pointer position-static show nav-item text-light">
+                                <a href="/" class=" text-white text-decoration-none fw-semibold enable-click nav-link text-light dropdown-toggle o_mega_menu_toggle mon_bouton" data-toggle="dropdown" aria-expanded="true">
+                                    Théâtre
+                                </a>
+                                <div class="dropdown-menu">
+    <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </section>
+                                </div>
+                            </li>
+                            <li class=" hover-menu nav-desktop-item dropdown pb-3 mr-5 cursor-pointer position-static show nav-item text-light">
+                                <a href="/" class=" text-white text-decoration-none fw-semibold enable-click nav-link text-light dropdown-toggle o_mega_menu_toggle mon_bouton" data-toggle="dropdown" aria-expanded="true">
+                                    Humour
+                                </a>
+                                <div class="dropdown-menu">
+    <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-6 col-lg pt16 pb24">
+                        <h4 class="o_default_snippet_text text-uppercase h5 font-weight-bold mt-0">
+                            Sport
+                        </h4>
+                        <div class="s_hr text-left pt4 pb16 text-o-color-1">
+                            <hr class="w-100 mx-auto" style="border-top-width: 2px; border-top-style: solid;">
+                        </div>
+                        <nav class="nav flex-column">
+                                <a class="nav-link o_default_snippet_text px-0" data-name="Menu Item" href="/event/9/register">
+                                    Match usm vs MCA
+                                </a>
+                        </nav>
+                    </div>
+            </div>
+        </div>
+    </section>
+                                </div>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    <main>
+        <div class="o_portal container mt-3">
+            <div class="row align-items-center bg-white no-gutters border rounded">
+                <div class="col-10">
+    <ol class="o_portal_submenu breadcrumb mb-0 py-2 flex-grow-1 row">
+        <li class="breadcrumb-item ml-1"><a href="/my/home" aria-label="Accueil" title="Accueil"><i class="fa fa-home"></i></a></li>
+    </ol>
+                </div>
+            </div>
+        </div>
+        <div id="wrap" class="o_portal_wrap">
+            <div class="container mb64">
+            <div id="wrap" class="o_wprofile_wrap mt-0">
+                <div class="container bg-white">
+                    <div class="row d-flex m-0">
+        <div class="col-sm-12 col-md-3 mt-2">
+            <div class="o_wprofile_sidebar portal-border-side-bar">
+                <div class=" position-relative mb-2">
+                    <div class="profile-container" style="background-color:#962D3E ;height:210px">
+                        <div class="text-center pt-3 " style=" position: inherit;">
+                            <img class="rounded-circle disappearing-image" style="height: 150px; width: 150px;" src="/web/image/res.partner/38/image_128?unique=4ba8ffa" loading="lazy">
+                        </div>
+                        <div class="text-white text-center">
+                        </div>
+                        <div class=" text-white  text-center">
+                            <b>Djawed Tehami</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3" id="o_wprofile_sidebar_collapse">
+                    <table class="table table-sm" id="o_wprofile_sidebar_table">
+                        <tbody>
+                <tr class="side-navbar-row">
+                    <td style="border:none;" class="p-2 pt-1 sidebar-link">
+                        <div class="o_wprofile_sidebar_top d-flex justify-content-left side-bar-title">
+                            <i class="fa fa-2x fa-tachometer mr-3 "></i>
+                            <a class="sidebar-a side-navbar-link" href="/my/client/dashboard">
+                                Tableau de board
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="side-navbar-row">
+                    <td style="border:none;" class="p-2 pt-1 sidebar-link">
+                        <div class="o_wprofile_sidebar_top d-flex justify-content-left side-bar-title">
+                            <i class="fa fa-2x fa-building mr-3 "></i>
+                            <a class="sidebar-a side-navbar-link" href="/my/client/tickets">
+                                Mes tickets
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="side-navbar-row">
+                    <td style="border:none;" class="p-2 pt-1 sidebar-link">
+                        <div class="o_wprofile_sidebar_top d-flex justify-content-left side-bar-title">
+                            <i class="fa fa-2x fa-credit-card mr-3 "></i>
+                            <a class="sidebar-a side-navbar-link" href="/my/payments">
+                                Mes paiements
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="side-navbar-row">
+                    <td style="border:none;" class="p-2 sidebar-link">
+                        <div class="o_wprofile_sidebar_top d-flex justify-content-left side-bar-title">
+                            <i class="fa fa-2x fa-heart  mr-3  "></i>
+                            <a class=" sidebar-a side-navbar-link" href="/my/client/favorites">
+                                Mes favoris
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="side-navbar-row">
+                    <td style="border:none;" class="p-2 pt-1 sidebar-link">
+                        <div class="o_wprofile_sidebar_top d-flex justify-content-left side-bar-title">
+                            <i class="fa fa-2x fa fa-pencil mr-3 "></i>
+                            <a class="sidebar-a side-navbar-link" href="/my">
+                                Modifier le profil
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12  col-md-9 ">
+            <div class="container mt-2  mr-5" style="background:#white; color:white; box-shadow: 5px 10px 18px #D0CDCD; border-radius: 5px;">
+                <div class="row-12 ">
+                    <h5 class="card-title">
+                        <strong>
+                            <h5 class="portal-header"> Mes Tickets </h5>
+                        </strong>
+                    </h5>
+                </div>
+<div class="row align-items-center d-flex" style="margin-left: 30px;margin-bottom: 20px;color: black;">
+  <div class="col-sm-0">
+    <img class="rounded-circle img-fluid" style="width: 80px; height: 80px;" src="/jouz/static/logos/logo_jouz_128_128.png" alt="Jouz logo" loading="lazy">
+  </div>
+  <div class="col-sm-8">
+    <strong>Pas de ticket</strong>
+  </div>
+</div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+            </main>
+            <footer id="bottom" data-anchor="true" data-name="Footer" class="o_footer o_colored_level o_cc ">
+                <div id="footer" class="oe_structure oe_structure_solo ">
+    <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
+      <div class="container footer_margin">
+        <div class="row m-4">
+          <div class="col col-12 col-md-6 col-lg-4 o_animate o_anim_flip_in_x o_animate_both_scroll" style="animation-name: o_anim_flip_in_x; visibility: visible; animation-play-state: paused;">
+            <div class="row mb-4">
+              <img src="/jouz_theme/static/src/images/logo_jouz_300_transparent.png" height="128px" width="128px" aria-label="Logo of jouz" title="Jouz" role="img" class="header-logo-image o_animate o_anim_rotate_in o_animate_both_scroll o_visible o_animating" loading="lazy" style="animation-name: o_anim_rotate_in; visibility: visible; animation-play-state: running;">
+            </div>
+            <div class="row d-flex align-items-center mt-2 mb-2">
+              <div class="col-2">
+                <i class="fa fa-2x fa-map-marker"></i>
+              </div>
+              <div class="col-10 pt-2">
+                <p class="contact-us-text">
+                </p>
+              </div>
+            </div>
+            <div class="row d-flex align-items-center mt-2 mb-2">
+              <div class="col-2">
+                <i class="fa fa-2x fa-envelope"></i>
+              </div>
+              <div class="col-10">
+                <p class="contact-us-text">
+                  contact@jouz-solutions.dz
+                </p>
+              </div>
+            </div>
+            <div class="row d-flex align-items-center mt-2 mb-2">
+              <div class="col-2">
+                <i class="fa fa-3x fa-mobile"></i>
+              </div>
+              <div class="col-10">
+                <p class="contact-us-text">
+                </p>
+              </div>
+            </div>
+            <div class="row d-flex align-items-center mt-2 mb-2">
+              <div class="col-2">
+                <i class="fa fa-2x fa-phone"></i>
+              </div>
+              <div class="col-10">
+                <p class="contact-us-text">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-12 col-md-6 col-lg-3 o-color-3 o_animate o_anim_flip_in_x o_animate_both_scroll" style="animation-name: o_anim_flip_in_x; visibility: visible; animation-play-state: paused;">
+            <h4 class="mt-5 mb-5"> Catégories d'événements </h4>
+            <p class="contact-us-text">
+                <a href="/event?category=2">
+                  Conférence
+                </a>
+                <br>
+                <a href="/event?category=3">
+                  Spectacles
+                </a>
+                <br>
+                <a href="/event?category=4">
+                  Théâtre
+                </a>
+                <br>
+                <a href="/event?category=5">
+                  Humour
+                </a>
+                <br>
+                <a href="/event?category=6">
+                  Musique - Danse
+                </a>
+                <br>
+                <a href="/event?category=7">
+                  Sport
+                </a>
+                <br>
+                <a href="/event?category=8">
+                  Loisirs
+                </a>
+                <br>
+                <a href="/event?category=9">
+                  Cirque
+                </a>
+                <br>
+                <a href="/event?category=10">
+                  Enfants
+                </a>
+                <br>
+                <a href="/event?category=11">
+                  Soirées
+                </a>
+                <br>
+            </p>
+          </div>
+          <div class="col col-12 col-md-6 col-lg-3 o_animate o_anim_flip_in_x o_animate_both_scroll" style="animation-name: o_anim_flip_in_x; visibility: visible; animation-play-state: paused;">
+            <h4 class="mt-5 mb-5">À propos</h4>
+            <p class="contact-us-text">
+              <a href="/contactus"> Contactez-nous </a>
+              <br>
+              <a href="/cgu"> Conditions Générales d'Utilisation et de Vente </a>
+              <br>
+              <a href="/privacy-policy"> Politique de confidentialité </a>
+              <br>
+            </p>
+          </div>
+          <div class="col col-12 col-md-6 col-lg-2 s_social_media text-start no_icon_color o_not_editable o_animate o_anim_flip_in_x o_animate_both_scroll" data-snippet="s_social_media" data-name="Social Media" contenteditable="false" style="animation-name: o_anim_flip_in_x; visibility: visible; animation-play-state: paused;">
+            <h4 class="mt-5 mb-5">
+              Rejoignez-nous
+            </h4>
+            <h5 class="s_social_media_title d-none" contenteditable="true">Rejoignez-nous</h5>
+            <a href="/website/social/facebook" class="s_social_media_facebook" target="_blank">
+              <i class="fa fa-2x fa-facebook m-1"></i>
+            </a>
+            <a href="/website/social/twitter" class="s_social_media_twitter" target="_blank">
+              <i class="fa fa-2x fa-twitter m-1"></i>
+            </a>
+            <a href="/website/social/instagram" class="s_social_media_instagram" target="_blank">
+              <i class="fa fa-2x fa-instagram m-1"></i>
+            </a>
+            <a href="/website/social/linkedin" class="s_social_media_linkedin" target="_blank">
+              <i class="fa fa-2x fa-linkedin m-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+<div class="container py-3">
+            <div class="row">
+                <div class="col-sm text-center text-sm-center text-muted">
+                    <span class="o_footer_copyright_name mr-2">Copyright © 2023 Jouz Solutions. Tous droits réservés. </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+        <script id="tracking_code" async="1" src="https://www.googletagmanager.com/gtag/js?id=G-BNCD9N22YG"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BNCD9N22YG');
+        </script>
+
+    <div><div class="o_notification_manager"></div><div></div><div class="o_effects_manager"></div><div class="o_dialog_container"></div><div class="o_popover_container"></div></div><div class="o_fullscreen_indication">
+    <p>Appuyer sur <span>esc</span> pour quitter le plein écran</p>
+</div></body>
+</html>
